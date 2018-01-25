@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoCell: UICollectionViewCell {
     
+    let imageCache = NSCache<NSString, UIImage>()
     
     
  
@@ -21,14 +22,20 @@ class PhotoCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(data: String) {
-        let url = URL(string:data)
+    func configureCell(data: UIImage) {
+        //let url = URL(string:data)
         
-        if let data = try? Data(contentsOf: url!)
-        {
-            flickrImage.image = UIImage(data: data)
-            
-        }
+       flickrImage.image = data
         
+//        if let data = try? Data(contentsOf: url!)
+//        {
+//            flickrImage.image = UIImage(data: data)
+//
+//        }
     }
+    
+    
+    
+    
+    
 }
