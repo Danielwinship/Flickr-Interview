@@ -44,7 +44,7 @@ class FlickrService {
             finalFlickrUrl.append(urlString)
         
         }
-        print("step 2")
+    
         retrieveImages()
     }
     
@@ -60,6 +60,12 @@ class FlickrService {
     }
 }
 
+    func resetData() {
+         flickrPhotoArray.removeAll()
+         flickrUrl.removeAll()
+         finalFlickrUrl.removeAll()
+         imageArray.removeAll()
+    }
     
 
 }

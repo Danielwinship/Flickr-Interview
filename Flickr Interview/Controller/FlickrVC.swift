@@ -29,8 +29,13 @@ class FlickrVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
-        FlickrService.instance.getFlickrUrl()
-        collectionView.reloadData()
+        if  FlickrService.instance.imageArray.count == 0 {
+            FlickrService.instance.getFlickrUrl()
+            collectionView.reloadData()
+        } else {
+             collectionView.reloadData()
+        }
+       
        
     }
     
