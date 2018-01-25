@@ -23,15 +23,7 @@ class PhotoCell: UICollectionViewCell {
     }
     
     func configureCell(data: UIImage) {
-        //let url = URL(string:data)
-        
        flickrImage.image = data
-        
-//        if let data = try? Data(contentsOf: url!)
-//        {
-//            flickrImage.image = UIImage(data: data)
-//
-//        }
     }
     
     

@@ -29,7 +29,7 @@ class FlickrService {
     func loadFlickrUrlToArray(data: Dictionary<String,AnyObject>) {
         let photosDict = data["photos"] as! Dictionary<String, AnyObject>
         let photosDictArray = photosDict["photo"] as! [Dictionary<String, AnyObject>]
-        //print(photosDictArray)
+       
         
         for photo in photosDictArray {
             let flickrPhoto = FlickrPhotoModel(id: photo["id"] as! String, secret: photo["secret"] as! String,farm: photo["farm"] as! Int,server:photo["server"] as! String)
@@ -55,13 +55,12 @@ class FlickrService {
             Alamofire.request(url).responseImage(completionHandler: { (response) in
                 guard let image = response.result.value else {return}
                 self.imageArray.append(image)
-                
-                
-               
-            })
-        }
+     
+        })
+    }
 }
 
+    
 
 }
 

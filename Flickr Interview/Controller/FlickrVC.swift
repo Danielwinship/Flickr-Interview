@@ -24,13 +24,14 @@ class FlickrVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
         collectionView.delegate = self
         collectionView.dataSource = self
         FlickrService.instance.getFlickrUrl()
-        print("step 1")
+      
         }
     
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
+        FlickrService.instance.getFlickrUrl()
         collectionView.reloadData()
-        print("step 3")
+       
     }
     
  
