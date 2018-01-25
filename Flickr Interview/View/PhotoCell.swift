@@ -9,7 +9,11 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
+    
+    
+    
  
+    //Outlets
     @IBOutlet weak var flickrImage: UIImageView!
     
     
@@ -17,7 +21,14 @@ class PhotoCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell() {
-        flickrImage.backgroundColor = #colorLiteral(red: 0.9647058824, green: 0.6509803922, blue: 0.137254902, alpha: 1)
+    func configureCell(data: String) {
+        let url = URL(string:data)
+        
+        if let data = try? Data(contentsOf: url!)
+        {
+            flickrImage.image = UIImage(data: data)
+            
+        }
+        
     }
 }

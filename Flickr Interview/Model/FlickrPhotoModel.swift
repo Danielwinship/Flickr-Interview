@@ -10,8 +10,10 @@ import Foundation
 
 struct  FlickrPhotoModel {
     
-    let id: Int
-    let owner: String
+    let id: String
+    let secret: String
+    let farm: Int
+    let server:String
 }
 
 
@@ -20,7 +22,6 @@ struct  FlickrPhotoModel {
 
 
                                 //Secret      //ID
-//"https://www.flickr.com/photos/43039595@N02/24965633177/sizes/q/"
 
 
-//https://www.flickr.com/photos/130982849@N05/39805370732/sizes/t/
+//https://farm6.staticflickr.com/5455/9729176344_aa203ba667_z_d.jpg

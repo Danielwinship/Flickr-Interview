@@ -8,16 +8,29 @@
 
 import UIKit
 
+
+
 class FlickrVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
-    @IBOutlet weak var collectionView: UICollectionView!
     
+   
+    
+    //Outlets
+    @IBOutlet weak var collectionView: UICollectionView!
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        FlickrService.instance.getFlickrUrl { (success) in
+            if success == true {
+                //FlickrService.instance.buildFlickrUrlFromArray()
+            }
+        }
     }
+    
+   
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -25,8 +38,8 @@ class FlickrVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? PhotoCell else {return UICollectionViewCell()}
-            
-          cell.configureCell()
+        //print(FlickrService.instance.finalFlickrUrl[0])
+          //cell.configureCell(data: FlickrService.instance.finalFlickrUrl[indexPath.row])
         
          return cell
         
